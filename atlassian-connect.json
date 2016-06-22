@@ -1,0 +1,49 @@
+{
+    "key": "ACJIRA-959",
+    "name": "ACJIRA-959",
+    "description": "Add to support bug ACJIRA-959",
+    "vendor": {
+        "name": "ACJIRA-959",
+        "url": "https://github.com/stil4m/ACJIRA-959"
+    },
+    "baseUrl": "https://bd5cfa3d.ngrok.io",
+    "links": {
+        "self": "https://bd5cfa3d.ngrok.io/atlassian-connect.json",
+        "homepage": "https://bd5cfa3d.ngrok.io/atlassian-connect.json"
+    },
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "READ"
+    ],
+    "modules": {
+        "jiraGlobalPermissions": [{
+            "name": {
+                "value": "ACJIRA-959 Global Permission"
+            },
+            "description": {
+                "value": "This it global permission for ACJIRA-959."
+            },
+            "anonymousAllowed": false,
+            "key": "ACJIRA-959-GLOBAL-PERMISSION"
+        }],
+        "generalPages": [{
+            "key": "hello-world-page-jira",
+            "location": "system.top.navigation.bar",
+            "name": {
+                "value": "Hello World"
+            },
+            "url": "/hello-world",
+            "conditions": [{
+                "condition": "has_global_permission",
+                "params": {
+                    "permission": "ACJIRA-959__ACJIRA-959-GLOBAL-PERMISSION"
+                }
+            }]
+        }]
+    }
+}
